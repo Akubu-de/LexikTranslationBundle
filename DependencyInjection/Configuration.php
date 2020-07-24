@@ -21,8 +21,7 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder()
     {
-        $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('lexik_translation');
+        $treeBuilder = new TreeBuilder('lexik_translation');
 
         $storages = array(
             StorageInterface::STORAGE_ORM,
@@ -32,7 +31,7 @@ class Configuration implements ConfigurationInterface
         $registrationTypes = array('all', 'files', 'database');
         $inputTypes = array('text', 'textarea');
 
-        $rootNode
+        $treeBuilder->getRootNode()
             ->addDefaultsIfNotSet()
             ->children()
                 ->scalarNode('base_layout')

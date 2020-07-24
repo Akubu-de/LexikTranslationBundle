@@ -4,3 +4,6 @@ Propel/map
 Propel/om
 
 Tests/app/tmp/
+.idea/LexikTranslationBundle.iml
+.idea/misc.xml
+.idea/modules.xml
