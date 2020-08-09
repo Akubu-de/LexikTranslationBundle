@@ -44,6 +44,12 @@ class Translator extends BaseTranslator
         }
 
         foreach ($resources as $resource) {
+            /*Fix for: Third argument in addResource can not be null
+             * If locale is null then add default locale.
+             */
+            if($resource['locale']==null)
+                $resource['locale']="en_EN";
+
             $this->addResource('database', 'DB', $resource['locale'], $resource['domain']);
         }
     }
